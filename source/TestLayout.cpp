@@ -48,7 +48,7 @@ if (page == 0) {//Page 1
 	player->mRotation.x,
 	player->mRotation.y,
 	player->mRotation.z,
-	player->mGravity.x;
+	player->mGravity.x,
 	player->mGravity.y,
 	player->mGravity.z,
 	player->mVelocity->x,
@@ -56,7 +56,7 @@ if (page == 0) {//Page 1
 	player->mVelocity->z,
 	MR::getPlayingBckName(player),
 	MR::getBckFrame(player),
-	MR::getBckFrameMax(player),
+	MR::getBckFrameMax(player)
 	);
 }
 else if (page == 1) {//Page 2
