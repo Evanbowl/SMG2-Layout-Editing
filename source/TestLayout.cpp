@@ -26,9 +26,9 @@ void TestLayout::movement() {
 	if (page == 3)
 		page = 0;
 	else if (page == -1)
-		page = 3;
+		page = 2;
 
-	if (page == 3)
+	if (page == 2)
 		mLayoutActorFlag.mIsHidden = true;
     else
 		mLayoutActorFlag.mIsHidden = false;
@@ -90,7 +90,7 @@ else if (page == 2) {//Page 3, unused for now.
 }
 }
 
-void initTestLayout(NameObj* sus) {
+void initTestLayout(NameObj* sus) {//This function keeps the layout initialized whenever possible.
 	MR::connectToSceneLayout(sus);
 	TestLayout* layout = new TestLayout("TestLayout");
 }
