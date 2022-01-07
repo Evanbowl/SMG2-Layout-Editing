@@ -51,9 +51,9 @@ if (page == 0) {//Page 1
 	player->mGravity.x,
 	player->mGravity.y,
 	player->mGravity.z,
-	player->mVelocity->x,
-	player->mVelocity->y,
-	player->mVelocity->z,
+	player->mVelocity.x,
+	player->mVelocity.y,
+	player->mVelocity.z,
 	MR::getPlayingBckName(player),
 	MR::getBckFrame(player),
 	MR::getBckFrameMax(player)
