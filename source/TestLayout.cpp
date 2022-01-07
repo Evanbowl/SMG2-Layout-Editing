@@ -9,7 +9,6 @@ TestLayout::TestLayout(const char* pName) : LayoutActor(pName, 0) {
 void TestLayout::init(const JMapInfoIter &rIter) {
 	MR::connectToSceneLayout(this);
 	initLayoutManager("TestLayout", 1);
-	draw();
 	appear();
 }
 
