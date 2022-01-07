@@ -4,7 +4,6 @@
 #include "Player/MarioActor.h"
 
 TestLayout::TestLayout(const char* pName) : LayoutActor(pName, 0) {
-	initWithoutIter();
 }
 
 void TestLayout::init(const JMapInfoIter &rIter) {
@@ -48,9 +47,9 @@ if (page == 0) {//Page 1
 	player->mRotation.x,
 	player->mRotation.y,
 	player->mRotation.z,
-	player->mGravity.x,
-	player->mGravity.y,
-	player->mGravity.z,
+	player->getGravityVec()->x,
+	player->getGravityVec()->y,
+	player->getGravityVec()->z,
 	player->mVelocity.x,
 	player->mVelocity.y,
 	player->mVelocity.z,
@@ -93,5 +92,6 @@ else if (page == 2) {//Page 3, unused for now.
 void initTestLayout(NameObj* sus) {//This function keeps the layout initialized whenever possible.
 	MR::connectToSceneLayout(sus);
 	TestLayout* layout = new TestLayout("TestLayout");
+	layout->initWithoutIter();
 }
 kmCall(0x804657A0, initTestLayout);
