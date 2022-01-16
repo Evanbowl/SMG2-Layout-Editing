@@ -4,7 +4,7 @@
 
 class TestLayout : public LayoutActor {
 public:
-	TestLayout(const char* pName);
+	TestLayout();
 
 	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();

@@ -3,7 +3,7 @@
 #include "Player/MarioAccess.h"
 #include "Player/MarioActor.h"
 
-TestLayout::TestLayout(const char* pName) : LayoutActor(pName, 0) {
+TestLayout::TestLayout() : LayoutActor("TestLayout", 0) {
 }
 
 void TestLayout::init(const JMapInfoIter &rIter) {
@@ -28,7 +28,7 @@ void TestLayout::movement() {
 
 	if (page == 2)
 		mLayoutActorFlag.mIsHidden = true;
-    else
+	else
 		mLayoutActorFlag.mIsHidden = false;
 
 	TVec2f pointPosP1 = TVec2f(0.0f, 0.0f);
@@ -40,9 +40,9 @@ void TestLayout::movement() {
 
 if (page == 0) {//Page 1
 	MR::setTextBoxFormatRecursive(this, "TxtText", L"Page 1\nPlayer\nPosition: %.03f, %.03f, %.03f\nRotation: %.03f, %.03f, %.03f\nGravity: %.03f, %.03f, %.03f\nVelocity: %.03f, %.03f, %.03f\nCurrent Animation: %s (%.0f/%.0f)",
-    player->mTranslation.x,
-    player->mTranslation.y,
-    player->mTranslation.z,
+	player->mTranslation.x,
+	player->mTranslation.y,
+	player->mTranslation.z,
 	player->mRotation.x,
 	player->mRotation.y,
 	player->mRotation.z,
@@ -88,9 +88,10 @@ else if (page == 2) {//Page 3, unused for now.
 }
 }
 
-void initTestLayout(NameObj* sus) {//This function keeps the layout initialized whenever possible.
-	MR::connectToSceneLayout(sus);
-	TestLayout* layout = new TestLayout("TestLayout");
+void initTestLayout(NameObj* pLayout) {//This function keeps the layout initialized whenever possible.
+	MR::connectToSceneLayout(pLayout);
+
+	TestLayout* layout = new TestLayout();
 	layout->initWithoutIter();
 }
 kmCall(0x804657A0, initTestLayout);
